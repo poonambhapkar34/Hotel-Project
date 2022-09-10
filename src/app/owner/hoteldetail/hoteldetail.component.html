@@ -1,0 +1,61 @@
+<button mat-button color="warn" routerLink="/ownerland">Back</button>
+<div class="main">
+    <h1 style="text-align:center ;"><b>Register Here</b></h1>
+    <form [formGroup]="regitrationForm!" autocomplete="off">
+
+        <mat-form-field>
+            <mat-label>Owner Name </mat-label><br>
+            <input matInput type="text" formControlName="userName" placeholder="Enter owner name">
+            <mat-hint>Enter owner name here </mat-hint>
+            <mat-error>karan rajput</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Hotel Name</mat-label><br>
+            <input matInput type="text" formControlName="hotelName" placeholder="Enter hotel name">
+            <mat-hint>Enter hotel name here</mat-hint>
+            <mat-error>The Royal Hotel</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Hotel Address</mat-label><br>
+            <input matInput type="text" formControlName="hotelAddress" placeholder="Enter hotel address">
+            <mat-hint>Enter hotel address here</mat-hint>
+            <mat-error>Abc Chouk Pune</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Mobile Number</mat-label><br>
+            <input matInput type="text" formControlName="hotelMobile" placeholder="Enter hotel mobile number">
+            <mat-hint>Enter contact here</mat-hint>
+            <mat-error>Enter 10 degit number</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Menu List</mat-label><br>
+            <input matInput type="text" formControlName="hotelMenu" placeholder="Special Menu">
+            <mat-hint>Enter Menu  </mat-hint>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Room Available</mat-label><br>
+            <input matInput type="text" formControlName="roomAvailable" placeholder="Enter room available">
+            <mat-hint>Room Detail</mat-hint>
+        </mat-form-field><br>
+
+        <mat-form-field class="inp">
+            <mat-label>Enter Password</mat-label><br>
+            <input matInput type="password" formControlName="userPass" placeholder="Enter password">
+            <mat-error>enter your 8 digit password</mat-error>
+        </mat-form-field>
+    
+        <label>
+            <input type="checkbox" formControlName="owenrCheck" required > Accept Tc & Cs
+        </label>
+
+        <div style="text-align: center;">
+            <button [disabled]="regitrationForm.invalid" class="btn" mat-raised-button color="accent"
+                (click)="postHoteldata(regitrationForm.value)" >Register</button>
+        </div><br>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+
+<div class="container text-center">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or hotelHome or hotelAddress">
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+          <th>Id</th>
+          <th>Owner Name</th>
+          <th>Hotel Name</th>
+          <th>Menu</th>
+          <th>Room Available</th>
+          <th>Hotel Address</th>
+          <th>Hotel Mobile</th>
+          <th>Book</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of apidata | filter:searchText">
+          <td>{{data.id}}</td>
+          <td>{{data.userName}}</td>
+          <td>{{data.hotelName}}</td>
+          <td>{{data.hotelMenu}}</td>
+          <td>{{data.roomAvailable}}</td>
+          <td>{{data.hotelAddress}}</td>
+          <td>{{data.hotelMobile}}</td>
+          <td><button type="button" class="btn btn-outline-success" routerLink="/hotelbooking">BOOK NOW</button>
+          </td>
+          
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <button mat-button color="warn" routerLink="/userland">Back</button>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="main">
+    <button class="bg" mat-raised-button color="accent" routerLink="/home">Back</button>
+
+    <button class="bg" mat-raised-button color="primary"  routerLink="/adminsignin">Sign in</button>
+    
+    <button class="bg" mat-raised-button color="warn"  routerLink="/adminsignup">Sign up</button>
+
+    <button class="btn btn-dark bg"  routerLink="/adminsucces">Hotel List</button>
+
+    <button type="button" class="btn btn-outline-warning bg" (click)=" hotelRequest()">Hotel Request</button>
+
+    <br>
+    <br>
+
+    <div *ngIf="showReq" class="div">
+        <h1>Hotel Request</h1>
+        <table border="2px black">
+            <thead>
+                <tr>
+                    <th>Owner Name</th>
+                    <th>Hotel Name</th>
+                    <th>Menu</th>
+                    <th>Room Available</th>
+                    <th>Hotel Address</th>
+                    <th>Hotel Mobile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hoteldata of hotelData">
+                    <td>{{hoteldata.userName}}</td>
+                    <td>{{hoteldata.hotelName}}</td>
+                    <td>{{hoteldata.hotelMenu}}</td>
+                    <td>{{hoteldata.roomAvailable}}</td>
+                    <td>{{hoteldata.hotelAddress}}</td>
+                    <td>{{hoteldata.hotelMobile}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <button type="button" class="btn btn-outline-success bg" (click)=" acceptRequest()">Accept Request</button>
+        <button type="button" class="btn btn-outline-danger bg"(click)=" rejectRequest()">Reject Request</button>
+    </div>
+
+    
+</div>

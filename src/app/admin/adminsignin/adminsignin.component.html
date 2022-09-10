@@ -1,0 +1,24 @@
+<button mat-button color="warn" routerLink="/adminland">Back</button>
+<div class="main">
+    <h2 style="text-align: center;">Login here </h2>
+
+    <form [formGroup]="signInForm" autocomplete="off">
+      <mat-form-field class="inp">
+        <mat-label>Enter Name</mat-label><br>
+        <input matInput type="text" formControlName="userName" placeholder="Enter your name">
+        <mat-error>Enter your name</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="inp">
+        <mat-label>Enter Password</mat-label><br>
+        <input matInput type="password" formControlName="userPass" placeholder="Enter password">
+        <mat-error>enter your 8 digit password</mat-error>
+
+      </mat-form-field><br><br>
+
+        <button [disabled]="signInForm.invalid" class="btn" mat-raised-button color="accent"
+          (click)="signInData(signInForm.value)"  >Sign in</button>
+          <div>Not a member?<a routerLink="/adminsignup" > Signup now  </a> </div>
+    </form>
+</div>
+

@@ -1,0 +1,27 @@
+.main{
+    background-image: url('~src/assets/img/water.jpeg');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size:cover;
+}
+.bg{
+    margin-left: 15px;
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .div{
+    background-color: coral;
+  }

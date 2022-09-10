@@ -1,0 +1,29 @@
+
+<button mat-button color="warn" routerLink="/userland">Back</button>
+<div class="main">
+    <h2 style="text-align: center;">Login here </h2>
+    <form [formGroup]="signInForm" autocomplete="off">
+      <mat-form-field class="inp">
+        <mat-label>Enter Name</mat-label><br>
+        <input matInput type="text" formControlName="userName" placeholder="Enter your name">
+      </mat-form-field><br>
+
+      <mat-form-field class="inp">
+        <mat-label>Enter Address</mat-label><br>
+        <input matInput type="text" formControlName="userAddress" placeholder="Enter your address">
+      </mat-form-field><br>
+
+      <mat-form-field class="inp">
+        <mat-label>Booking Amount</mat-label><br>
+        <input matInput type="text" formControlName="bookingAmount" placeholder="Pay boking Charges min 1000 rs">
+      </mat-form-field><br>
+
+      <mat-form-field class="inp">
+        <mat-label>Enter Password</mat-label><br>
+        <input matInput type="password" formControlName="userPass" placeholder="Enter password">
+      </mat-form-field><br><br>
+
+        <button [disabled]="signInForm.invalid" class="btn" mat-raised-button color="accent"
+          (click)="postHotelBookingdata(signInForm.value)"  >Submit</button>
+    </form>
+</div>

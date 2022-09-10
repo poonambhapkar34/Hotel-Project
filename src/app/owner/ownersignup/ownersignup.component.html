@@ -1,0 +1,48 @@
+<button mat-button color="warn" routerLink="/ownerland">Back</button>
+<div class="main">
+    <h2 style="text-align:center ;">Sign up to create an account</h2>
+    <form [formGroup]="signUpForm!" autocomplete="off">
+        <mat-form-field>
+            <mat-label>Enter Name</mat-label><br>
+            <input matInput type="text" formControlName="userName" placeholder="Enter your name">
+            <mat-hint>Enter your name</mat-hint>
+            <mat-error>virat kohli</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Enter Email</mat-label><br>
+            <input matInput type="text" formControlName="userEmail" placeholder="Enter your email">
+            <mat-hint>Enter your email</mat-hint>
+            <mat-error>virat@18gmail.com</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Enter Mobile</mat-label><br>
+            <input matInput type="text" formControlName="userMob" placeholder="Enter your mobile number">
+            <mat-hint>Enter your number</mat-hint>
+            <mat-error>enter your 10 digit mobile number</mat-error>
+        </mat-form-field><br>
+
+        <label>Select Gender</label><br>
+        <input type="radio" value="male" formControlName="gender">Male <br>
+        <input type="radio" value="female" formControlName="gender">Female <br>
+
+        <mat-form-field>
+            <mat-label>Enter Password</mat-label><br>
+            <input matInput type="password" formControlName="userPass" placeholder="Enter password">
+            <mat-hint>Enter your password</mat-hint>
+            <mat-error>enter your 8 digit password</mat-error>
+        </mat-form-field><br><br>
+
+        <label>
+            <input type="checkbox" formControlName="userCheck" required > Accept Tc & Cs
+        </label>
+
+        <div style="text-align: center;">
+            <button [disabled]="signUpForm.invalid" class="btn" mat-raised-button color="accent"
+                (click)="postOwnerdata(signUpForm.value)" >Sign up</button>
+        </div><br>
+
+        <div style="text-align: center;">Already have member?<a routerLink="/ownersignin"> Sign in here </a> </div>
+    </form>
+</div>

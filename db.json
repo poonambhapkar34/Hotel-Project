@@ -1,0 +1,270 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "userName": "santosh",
+      "userEmail": "santosg@12gamil.com",
+      "userMob": "9860908859",
+      "gender": "male",
+      "userPass": "12345678"
+    },
+    {
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@77Gmail.com",
+      "userPass": "23234565",
+      "gender": "male",
+      "userCheck": true,
+      "id": 2
+    },
+    {
+      "userName": "sachin",
+      "userMob": "1231231231",
+      "userEmail": "santosh@gmail.com",
+      "userPass": "12121212",
+      "gender": "male",
+      "userCheck": true,
+      "id": 3
+    },
+    {
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 4
+    },
+    {
+      "userName": "Shivaji",
+      "userMob": "8485864512",
+      "userEmail": "Shivaji123@gmail.com",
+      "userPass": "12121212",
+      "gender": "male",
+      "userCheck": true,
+      "id": 5
+    }
+  ],
+  "hotel": [
+    {
+      "userName": "Varun Dhavan",
+      "hotelName": "Royal King",
+      "hotelAddress": "Sanbhajinagar",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Snacks",
+      "roomAvailable": "12",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 1
+    },
+    {
+      "userName": "Sachin Shinde",
+      "hotelName": "Oscarwadi",
+      "hotelAddress": "Munbai",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Uttapas",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 2
+    },
+    {
+      "userName": "Akshay Kumar",
+      "hotelName": "Paradise",
+      "hotelAddress": "Nashik",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Dosa",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 3
+    },
+    {
+      "userName": "Hardik Pandey",
+      "hotelName": "Dharmaraj",
+      "hotelAddress": "Maval,Pune",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Hot Beverages",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 4
+    },
+    {
+      "userName": "Sachin Mulak",
+      "hotelName": "Jagdanb",
+      "hotelAddress": "Paithan",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Rice",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 5
+    },
+    {
+      "userName": "Sachin Tendulkar",
+      "hotelName": "Jagdanb",
+      "hotelAddress": "Munbai",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Fish Pulav",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 6
+    },
+    {
+      "userName": "Vijay Shinde",
+      "hotelName": "Rajveer",
+      "hotelAddress": "Pune",
+      "hotelMobile": "9766725698",
+      "hotelMenu": "Shahi Panir",
+      "roomAvailable": "03",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 7
+    },
+    {
+      "userName": "Pravin Shinde",
+      "hotelName": "5 star",
+      "hotelAddress": "Ahmadnagar",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 8
+    },
+    {
+      "userName": "Prathmesh Patil",
+      "hotelName": "7 star",
+      "hotelAddress": "Pune",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer Tikka",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 9
+    },
+    {
+      "userName": "Yogesh Tade",
+      "hotelName": "samarth",
+      "hotelAddress": "Pategaon",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Rice",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 10
+    },
+    {
+      "userName": "Pravin Shinde",
+      "hotelName": "5 star",
+      "hotelAddress": "Ahmadnagar",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 11
+    },
+    {
+      "userName": "Abhijeet Malkapure",
+      "hotelName": "Hotel Plasa",
+      "hotelAddress": "Malkapur",
+      "hotelMobile": "9860908859",
+      "hotelMenu": "Rice",
+      "roomAvailable": "09",
+      "owenrCheck": true,
+      "userPass": "12121212",
+      "id": 12
+    },
+    {
+      "userName": "Anushka",
+      "hotelName": "AnshRaj Hotel",
+      "hotelAddress": "Nepti Naka ,Beed.",
+      "hotelMobile": "9832983888",
+      "hotelMenu": "Dal Tadka",
+      "roomAvailable": "02",
+      "owenrCheck": true,
+      "userPass": "12312312",
+      "id": 13
+    }
+  ],
+  "owner": [
+    {
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@77Gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 2
+    },
+    {
+      "userName": "sassa",
+      "userMob": "12345678",
+      "userEmail": "san11@gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 3
+    },
+    {
+      "userName": "ssss",
+      "userMob": "22222",
+      "userEmail": "ss@gmail.com",
+      "userPass": "1111",
+      "gender": "male",
+      "userCheck": true,
+      "id": 4
+    }
+  ],
+  "user": [
+    {
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@77Gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 1
+    }
+  ],
+  "hotelbooking": [
+    {
+      "userName": "santosh",
+      "userAddress": "Sanbhajinagar",
+      "bookingAmount": "1000",
+      "userPass": "12345678",
+      "id": 1
+    },
+    {
+      "userName": "Shivaji",
+      "userAddress": "Sheevgaon",
+      "bookingAmount": "1000",
+      "userPass": "12345678",
+      "id": 2
+    },
+    {
+      "userName": "Prashant Galdhar",
+      "userAddress": "Pathardi ",
+      "bookingAmount": "1000",
+      "userPass": "12345678",
+      "id": 3
+    },
+    {
+      "userName": "Suraj",
+      "userAddress": "Naka",
+      "bookingAmount": "1000",
+      "userPass": "12345678",
+      "id": 4
+    },
+    {
+      "userName": "sachin",
+      "userAddress": "Ahmadnagar",
+      "bookingAmount": "1000",
+      "userPass": "12345678",
+      "id": 5
+    }
+  ]
+}
