@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
     else if (data=='Owner'){
       this.router.navigateByUrl('/owner/ownerland')
     }
-
+    else  {
+      this.router.navigateByUrl('/user/userland')
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -8,13 +9,19 @@ import { DataService } from 'src/app/data.service';
 })
 export class OwnerlandComponent implements OnInit {
 
-  constructor(private dataservice:DataService) { }
+  constructor(private dataservice:DataService,private router : Router) { }
 
   ngOnInit(): void {
     // this.dataservice.getApiCall().subscribe(data=>{
     //   console.log(data);
       
     // })
+  }
+  newRegistration()
+  {
+        this.dataservice.newRegistration = true;
+    this.router.navigateByUrl('/owner/hoteldetail');
+
   }
 
 }

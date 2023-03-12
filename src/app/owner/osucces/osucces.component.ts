@@ -28,11 +28,8 @@ export class OsuccesComponent implements OnInit {
 
 
   //deleteApi
-  deleteData(id: any) {
-    this.dataservice.deletHotelCall(id).subscribe((data) => {
-      this.apidata = data
-      console.log(data);
-    })
+ async deleteData(id: any) {
+  this.apidata =  await this.dataservice.deletHotelCall(id).toPromise()
 
     //to refresh hotel list
     this.getHotelDetails()
@@ -40,8 +37,10 @@ export class OsuccesComponent implements OnInit {
   }
 
  async editData(id: any) {
-    this.dataservice.dataId = id;
-    this.dataservice.getApiData = await this.dataservice.getHotelCall().toPromise()
+   // this.dataservice.dataId = id;
+    this.dataservice.newRegistration = false;
+    this.dataservice.getApiData = await this.dataservice.getHotelDetailById(id).toPromise()
+    //this.dataservice.getApiData = await this.dataservice.getHotelCall().toPromise()
     // this.dataservice.getHotelCall().subscribe((data) => {
     //   this.dataservice.getApiData = data
     //   console.log(data);

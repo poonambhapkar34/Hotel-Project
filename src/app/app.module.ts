@@ -10,11 +10,9 @@ import { MatFormField, MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatInputModule } from "@angular/material/input";
-import { AdminModule } from './admin/admin.module';
-import { OwnerModule } from './owner/owner.module';
-import { UserModule } from './user/user.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NgbModule,
     FormsModule,
     MatButtonModule,
+    HttpClientModule
     // BrowserModule,
     // Ng2SearchPipeModule,
 
@@ -35,9 +34,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     // ReactiveFormsModule,
     // MatRadioModule,
     // MatInputModule,
-    AdminModule,
-    OwnerModule,
-    UserModule
+  
     
 
   ],

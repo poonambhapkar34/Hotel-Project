@@ -13,6 +13,7 @@ export class HoteldetailComponent implements OnInit {
   dataId: any;
   editData: any;
   editIdArray:any=[];
+  newRegistration: any;
 
 
   constructor(private fb: FormBuilder, private dataservice: DataService,private router:Router) { }
@@ -20,22 +21,29 @@ export class HoteldetailComponent implements OnInit {
   ngOnInit(): void {
     console.log('hotel details');
     
-    this.dataId = this.dataservice.dataId;
+   // this.dataId = this.dataservice.dataId;
+    this.newRegistration = this.dataservice.newRegistration;
     this.editData = this.dataservice.getApiData;
     console.log('data...', this.editData);
-    this.dataId ? this.fetchIdData(): this.formData();
+    if(this.newRegistration){
+      this.editData = {} ;
+    }
+    else{
+      this.editData = this.dataservice.getApiData;
+    }
+    //this.dataId ? this.fetchIdData(): this.formData();
     // this.fetchIdData()
   
 
-  }
-  fetchIdData() {
-    for (let i=0; i < this.editData.length; i++) {
-      if (this.editData[i].id == this.dataId) {
-        this.editIdArray.push(this.editData[i])
-      }
-    }
+  //}
+  // fetchIdData() {
+  //   for (let i=0; i < this.editData.length; i++) {
+  //     if (this.editData[i].id == this.dataId) {
+  //       this.editIdArray.push(this.editData[i])
+  //     }
+  //   }
 
-    console.log('this,editIdArraty', this.editIdArray);
+   
     // console.log('id Data', this.editIdArray[0].userName);
     this.formData()
 
@@ -43,23 +51,24 @@ export class HoteldetailComponent implements OnInit {
 
   formData() {
     this.regitrationForm = this.fb.group({
-      userName: [this.editIdArray[0] ? this.editIdArray[0].userName : '', [Validators.required, Validators.maxLength(40)]],
-      hotelName: [this.editIdArray[0] ? this.editIdArray[0].hotelName : '', [Validators.required,]],
-      hotelAddress: [this.editIdArray[0] ? this.editIdArray[0].hotelAddress : '', [Validators.required,]],
-      hotelMobile: [this.editIdArray[0] ? this.editIdArray[0].hotelMobile : '', [Validators.required, Validators.maxLength(10), Validators.pattern('^[0-9]{10}')]],
-      hotelMenu: [this.editIdArray[0] ? this.editIdArray[0].hotelMenu : '', [Validators.required]],
-      roomAvailable: [this.editIdArray[0] ? this.editIdArray[0].roomAvailable : '', Validators.required],
-      owenrCheck: [this.editIdArray[0] ? this.editIdArray[0].owenrCheck : '', [Validators.requiredTrue]],
-      userPass: [this.editIdArray[0] ? this.editIdArray[0].userPass : '', [Validators.required, Validators.maxLength(8)]],
+      //userName :[ this.editData ?  this.editData.userName : '']
+      // userName: [this.editIdArray[0] ? this.editIdArray[0].userName : '', [Validators.required, Validators.maxLength(40)]],
+      // hotelName: [this.editIdArray[0] ? this.editIdArray[0].hotelName : '', [Validators.required,]],
+      // hotelAddress: [this.editIdArray[0] ? this.editIdArray[0].hotelAddress : '', [Validators.required,]],
+      // hotelMobile: [this.editIdArray[0] ? this.editIdArray[0].hotelMobile : '', [Validators.required, Validators.maxLength(10), Validators.pattern('^[0-9]{10}')]],
+      // hotelMenu: [this.editIdArray[0] ? this.editIdArray[0].hotelMenu : '', [Validators.required]],
+      // roomAvailable: [this.editIdArray[0] ? this.editIdArray[0].roomAvailable : '', Validators.required],
+      // owenrCheck: [this.editIdArray[0] ? this.editIdArray[0].owenrCheck : '', [Validators.requiredTrue]],
+      // userPass: [this.editIdArray[0] ? this.editIdArray[0].userPass : '', [Validators.required, Validators.maxLength(8)]],
 
-      // userName: [this.editData ? this.editData.userName : '', [Validators.required, Validators.maxLength(40)]],
-      // hotelName: [this.editData ? this.editData.hotelName : '', [Validators.required,]],
-      // hotelAddress: [this.editData ? this.editData.hotelAddress : '', [Validators.required,]],
-      // hotelMobile: [this.editData ? this.editData.hotelMobile : '', [Validators.required, Validators.maxLength(10), Validators.pattern('^[0-9]{10}')]],
-      // hotelMenu: [this.editData ? this.editData.hotelMenu : '', [Validators.required]],
-      // roomAvailable: [this.editData ? this.editData.roomAvailable : '', Validators.required],
-      // owenrCheck: [this.editData ? this.editData.owenrCheck : '', [Validators.requiredTrue]],
-      // userPass: [this.editData ? this.editData.userPass : '', [Validators.required, Validators.maxLength(8)]],
+      userName: [this.editData ? this.editData.userName : '', [Validators.required, Validators.maxLength(40)]],
+      hotelName: [this.editData ? this.editData.hotelName : '', [Validators.required,]],
+      hotelAddress: [this.editData ? this.editData.hotelAddress : '', [Validators.required,]],
+      hotelMobile: [this.editData ? this.editData.hotelMobile : '', [Validators.required, Validators.maxLength(10), Validators.pattern('^[0-9]{10}')]],
+      hotelMenu: [this.editData ? this.editData.hotelMenu : '', [Validators.required]],
+      roomAvailable: [this.editData ? this.editData.roomAvailable : '', Validators.required],
+      owenrCheck: [this.editData ? this.editData.owenrCheck : '', [Validators.requiredTrue]],
+      userPass: [this.editData ? this.editData.userPass : '', [Validators.required, Validators.maxLength(8)]],
     });
    
 

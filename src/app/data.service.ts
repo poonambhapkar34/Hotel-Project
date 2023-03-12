@@ -10,19 +10,22 @@ export class DataService {
   userJourney:any
   adminurl= 'http://localhost:3000/admin';
   userurl= 'http://localhost:3000/user';
-  bookingUrl= 'http://localhost:3000/hotelbooking';
   ownerurl= 'http://localhost:3000/owner';
-  hotelurl= 'http://localhost:3000/hotel';
+  hotelurl= 'http://localhost:3000/hotelDetails';
+  bookingUrl= 'http://localhost:3000/hotelbooking';
+ 
+
   getApiData: any;
   editId: any;
   dataId: any;
   postData: any = [];
   postDataObj: any;
+  newRegistration: boolean = false;
 
 
 
 
-  constructor(private http : HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   //getAdminCall
   getAdminCall(){
@@ -74,6 +77,9 @@ export class DataService {
   return this.http.post(this.bookingUrl ,data)
  }
 
+ getHotelDetailById(id:number){
+  return this.http.get(this.hotelurl +'/' +id)
+ }
 
 
 // postApiCall(data:any){

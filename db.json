@@ -43,25 +43,64 @@
       "gender": "male",
       "userCheck": true,
       "id": 5
+    },
+    {
+      "userName": "pooja",
+      "userMob": "8989999988",
+      "userEmail": "pooja@123",
+      "userPass": "pooja123",
+      "gender": "female",
+      "userCheck": true,
+      "id": 6
     }
   ],
-  "hotel": [
+ 
+  "owner": [
     {
-      "userName": "Varun Dhavan",
-      "hotelName": "Royal King",
-      "hotelAddress": "Sanbhajinagar",
-      "hotelMobile": "8787878787",
-      "hotelMenu": "Snacks",
-      "roomAvailable": "12",
-      "owenrCheck": true,
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@77Gmail.com",
       "userPass": "12345678",
-      "id": 1
+      "gender": "male",
+      "userCheck": true,
+      "id": 2
     },
+    {
+      "userName": "sassa",
+      "userMob": "12345678",
+      "userEmail": "san11@gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 3
+    },
+    {
+      "userName": "ssss",
+      "userMob": "22222",
+      "userEmail": "ss@gmail.com",
+      "userPass": "1111",
+      "gender": "male",
+      "userCheck": true,
+      "id": 4
+    }
+  ],
+  "user": [
+    {
+      "userName": "Santosh",
+      "userMob": "9860908859",
+      "userEmail": "santosh@77Gmail.com",
+      "userPass": "12345678",
+      "gender": "male",
+      "userCheck": true,
+      "id": 1
+    }
+  ],
+  "hotelDetails": [
     {
       "userName": "Sachin Shinde",
       "hotelName": "Oscarwadi",
       "hotelAddress": "Munbai",
-      "hotelMobile": "8787878787",
+      "hotelMobile": "8787875557",
       "hotelMenu": "Uttapas",
       "roomAvailable": "07",
       "owenrCheck": true,
@@ -190,46 +229,6 @@
       "id": 13
     }
   ],
-  "owner": [
-    {
-      "userName": "Santosh",
-      "userMob": "9860908859",
-      "userEmail": "santosh@77Gmail.com",
-      "userPass": "12345678",
-      "gender": "male",
-      "userCheck": true,
-      "id": 2
-    },
-    {
-      "userName": "sassa",
-      "userMob": "12345678",
-      "userEmail": "san11@gmail.com",
-      "userPass": "12345678",
-      "gender": "male",
-      "userCheck": true,
-      "id": 3
-    },
-    {
-      "userName": "ssss",
-      "userMob": "22222",
-      "userEmail": "ss@gmail.com",
-      "userPass": "1111",
-      "gender": "male",
-      "userCheck": true,
-      "id": 4
-    }
-  ],
-  "user": [
-    {
-      "userName": "Santosh",
-      "userMob": "9860908859",
-      "userEmail": "santosh@77Gmail.com",
-      "userPass": "12345678",
-      "gender": "male",
-      "userCheck": true,
-      "id": 1
-    }
-  ],
   "hotelbooking": [
     {
       "userName": "santosh",
@@ -265,6 +264,13 @@
       "bookingAmount": "1000",
       "userPass": "12345678",
       "id": 5
+    },
+    {
+      "userName": "pooja",
+      "userAddress": "mumbai",
+      "bookingAmount": "1000",
+      "userPass": "pooja34",
+      "id": 6
     }
   ]
 }

@@ -12,7 +12,7 @@ import { DataService } from "src/app/data.service";
 export class AdminsigninComponent implements OnInit {
   signInForm!: FormGroup;
   
-  constructor(private dataservice : DataService ,private http:HttpClient, private fb : FormBuilder ,private router :Router) { }
+  constructor( private http:HttpClient, private fb : FormBuilder ,private router :Router) { }
 
   ngOnInit(): void {
    this.formValidation()
@@ -39,7 +39,7 @@ export class AdminsigninComponent implements OnInit {
       else{
         alert("user not found")
         this.signInForm.reset();
-        this.router.navigateByUrl('adminfaill')
+        this.router.navigateByUrl('adminsignin')
       }
     })
   }

@@ -38,7 +38,7 @@ export class AdminsignupComponent implements OnInit {
       
   })
   alert("you have suceesfully create account")
-  this.roter.navigateByUrl('/adminsignin')
+  this.roter.navigateByUrl('/adminsucces')
 
 }
   
