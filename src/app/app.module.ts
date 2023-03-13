@@ -14,10 +14,12 @@ import { MatInputModule } from "@angular/material/input";
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+   
   ],
   imports: [
     BrowserModule,

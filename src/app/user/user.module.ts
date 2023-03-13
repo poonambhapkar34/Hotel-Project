@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersuccesComponent } from './usersucces/usersucces.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -23,7 +24,8 @@ import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
     UsersigninComponent,
     UsersignupComponent,
     UsersuccesComponent,
-    HotelbookingComponent
+    HotelbookingComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
     MatRadioModule,
     MatInputModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    SharedModule
     
   ]
 })

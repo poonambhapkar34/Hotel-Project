@@ -20,7 +20,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let data of apidata | filter:searchText">
+      <tr *ngFor="let data of apidata | search:searchText">
           <td>{{data.id}}</td>
           <td>{{data.userName}}</td>
           <td>{{data.hotelName}}</td>

@@ -11,8 +11,10 @@ import { DataService } from "src/app/data.service";
 })
 export class AdminsigninComponent implements OnInit {
   signInForm!: FormGroup;
+  adminData: any;
   
-  constructor( private http:HttpClient, private fb : FormBuilder ,private router :Router) { }
+  constructor( private http:HttpClient,private dataService : DataService,
+     private fb : FormBuilder ,private router :Router) { }
 
   ngOnInit(): void {
    this.formValidation()
@@ -25,23 +27,29 @@ export class AdminsigninComponent implements OnInit {
     });
   }
 
-  signInData(data:any){
-    console.log(data);
-    this.http.get<any>("http://localhost:3000/admin").subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.userName===this.signInForm.value.userName && a.userPass===this.signInForm.value.userPass
-      })
-      if(user){
-        alert("Login successful");
-        this.signInForm.reset();
-        this.router.navigateByUrl('adminsucces')
-      }
-      else{
-        alert("user not found")
-        this.signInForm.reset();
-        this.router.navigateByUrl('adminsignin')
-      }
+  async signInData() {
+    console.log('signinForm data', this.signInForm.value);
+    // this.http.get<any>("http://localhost:3000/admin").subscribe(res=>{
+    //   const user = res.find((a:any)=>{
+    //     return a.userName===this.signInForm.value.userName && a.userPass===this.signInForm.value.userPass
+    //   })
+    this.adminData = await this.dataService.getAdminCall().toPromise();
+
+    var admin = this.adminData.find((ele: any) => {
+      return ele.userName === this.signInForm.value.userName && ele.userPass === this.signInForm.value.userPass
     })
+
+    if (admin) {
+      alert("Login successful");
+      // this.signInForm.reset();
+      this.router.navigateByUrl('/admin/adminsucces')
+    }
+    else {
+      alert("user not found")
+      // this.signInForm.reset();
+      this.router.navigateByUrl('/admin/adminsignin')
+    }
+
   }
 
 }
