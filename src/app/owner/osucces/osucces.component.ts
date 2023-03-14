@@ -18,10 +18,10 @@ export class OsuccesComponent implements OnInit {
   }
 
   getHotelDetails() {
-    this.dataservice.getHotelCall().subscribe((data) => {
-      this.apidata = data
-      console.log(data);
-    })
+    // this.dataservice.getHotelCall().subscribe((data) => {
+    //   this.apidata = data
+    //   console.log(data);
+    // })
 
     this.flag = true
   }

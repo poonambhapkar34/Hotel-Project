@@ -80,7 +80,9 @@ export class DataService {
  getHotelDetailById(id:number){
   return this.http.get(this.hotelurl +'/' +id)
  }
-
+getHotelListByOwner(ownerName:string){
+  return  this.http.get(this.hotelurl +'/' + ownerName)
+}
 
 // postApiCall(data:any){
 //  return this.http.post(this.url,data)

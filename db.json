@@ -54,7 +54,6 @@
       "id": 6
     }
   ],
- 
   "owner": [
     {
       "userName": "Santosh",
@@ -271,6 +270,58 @@
       "bookingAmount": "1000",
       "userPass": "pooja34",
       "id": 6
+    }
+  ],
+  "OwnerHotelDetails": [
+    {
+      "poonam": [
+        {
+          "userName": "poonam",
+          "hotelName": "Oscarwadi",
+          "hotelAddress": "Mumbai",
+          "hotelMobile": "8787875557",
+          "hotelMenu": "Uttapas",
+          "roomAvailable": "07",
+          "owenrCheck": true,
+          "userPass": "12345678",
+          "id": 1
+        },
+        {
+          "userName": "poonam",
+          "hotelName": "Sayaji",
+          "hotelAddress": "pune",
+          "hotelMobile": "8787875557",
+          "hotelMenu": "Misal",
+          "roomAvailable": "07",
+          "owenrCheck": true,
+          "userPass": "12345678",
+          "id": 2
+        }
+      ],
+      "santosh": [
+        {
+          "userName": "santosh",
+          "hotelName": "Oscarwadi",
+          "hotelAddress": "Mumbai",
+          "hotelMobile": "8787875557",
+          "hotelMenu": "Uttapas",
+          "roomAvailable": "07",
+          "owenrCheck": true,
+          "userPass": "12345678",
+          "id": 1
+        },
+        {
+          "userName": "santosh",
+          "hotelName": "Sayaji",
+          "hotelAddress": "pune",
+          "hotelMobile": "8787875557",
+          "hotelMenu": "Misal",
+          "roomAvailable": "07",
+          "owenrCheck": true,
+          "userPass": "12345678",
+          "id": 2
+        }
+      ]
     }
   ]
 }
