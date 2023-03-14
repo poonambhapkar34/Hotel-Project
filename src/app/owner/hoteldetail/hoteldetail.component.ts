@@ -23,7 +23,7 @@ export class HoteldetailComponent implements OnInit {
     
    // this.dataId = this.dataservice.dataId;
     this.newRegistration = this.dataservice.newRegistration;
-    this.editData = this.dataservice.getApiData;
+    //this.editData = this.dataservice.getApiData;
     console.log('data...', this.editData);
     if(this.newRegistration){
       this.editData = {} ;
