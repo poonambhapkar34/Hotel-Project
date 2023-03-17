@@ -10,21 +10,21 @@ import { DataService } from 'src/app/data.service';
 export class OsuccesComponent implements OnInit {
   apidata: any;
   flag = false;
-
+  ownerName:any
+  HotelListByOwnerdata: any;
+  ownerHotelData:any=[];
+  hotelListByOwner: any;
   constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getHotelDetails()
+    this.ownerName= this.dataservice.ownerName;
+   this.hotelListByOwner = this.dataservice.hotelListByOwner;
+   console.log(this.hotelListByOwner);
+   
+    //this.getHotelDetails()
   }
 
-  getHotelDetails() {
-    // this.dataservice.getHotelCall().subscribe((data) => {
-    //   this.apidata = data
-    //   console.log(data);
-    // })
 
-    this.flag = true
-  }
 
 
   //deleteApi
@@ -32,7 +32,7 @@ export class OsuccesComponent implements OnInit {
   this.apidata =  await this.dataservice.deletHotelCall(id).toPromise()
 
     //to refresh hotel list
-    this.getHotelDetails()
+   // this.getHotelDetails()
 
   }
 

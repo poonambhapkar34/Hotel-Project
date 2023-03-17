@@ -12,47 +12,72 @@ import { DataService } from 'src/app/data.service';
 export class OwnersigninComponent implements OnInit {
   apidata: any;
   signInForm!: FormGroup;
-
-
-  constructor(private dataservice:DataService,private http:HttpClient, private fb : FormBuilder ,private router :Router) { }
+  hotelDetails: any;
+  hotelListByOwner: any = [];
+  ownerData: any
+  ownerSuccData: any;
+  validOwner: any;
+  constructor(private dataservice: DataService, private http: HttpClient, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-   this.formValidation()
+    this.formValidation();
+    this.OwnerGetApiCall();
+    this.HotelDetailsGetApiCall();
   }
 
-  formValidation(){
+  formValidation() {
     this.signInForm = this.fb.group({
-      userName:['',[Validators.required,Validators.maxLength(40)]],
-      userPass:['',[Validators.required, Validators.maxLength(8)]],
+      userName: ['', [Validators.required, Validators.maxLength(40)]],
+      userPass: ['', [Validators.required, Validators.maxLength(8)]],
     });
   }
-  
-  signInData(data:any){
-    console.log(data);
-    this.http.get<any>("http://localhost:3000/owner").subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.userName===this.signInForm.value.userName && a.userPass===this.signInForm.value.userPass
+
+  OwnerGetApiCall() {
+    this.dataservice.getOwnerCall().subscribe(respo => {
+      this.ownerData = respo;
+      console.log(respo);
+    });
+    console.log('this.ownerData', this.ownerData);
+  }
+
+  HotelDetailsGetApiCall() {
+    this.dataservice.getHotelCall().subscribe(respo => {
+      this.hotelDetails = respo;
+      console.log(respo);
+    })
+  }
+  submit() {
+    if (this.hotelDetails) {
+      this.hotelDetails.forEach((element: any) => {
+        if (this.signInForm.value.userName == element.userName) {
+          this.hotelListByOwner.push(element);
+        }
       })
-      if(user){
-        alert("Login successful");
-        this.signInForm.reset();
-        this.router.navigateByUrl('osucces')
-      }
-      else{
-        alert("user not found")
-        this.signInForm.reset();
-        this.router.navigateByUrl('ofaill')
-      }
-    })
+      this.dataservice.hotelListByOwner = this.hotelListByOwner;
+      console.log('this.dataservice.hotelListByOwner', this.dataservice.hotelListByOwner);
+    }
+
+    if (this.ownerData) {
+      this.validOwner = this.ownerData.find((a: any) => {
+        return a.userName === this.signInForm.value.userName && a.userPass === this.signInForm.value.userPass
+      })
+      console.log('this.ownerSuccData ', this.ownerSuccData);
+    }
+    this.redirection()
   }
-  
-  
-  getOwnerData(){
-    this.dataservice.getOwnerCall().subscribe((data)=>{
-    this.apidata=data
-    console.log(data);
-    
-      
-    })
+
+  redirection() {
+    if (this.validOwner) {
+      alert("Login successful");
+      this.dataservice.ownerName = this.signInForm.value.userName;
+      this.signInForm.reset();
+      this.router.navigateByUrl('/owner/osucces')
+    }
+    else {
+      alert("user not found")
+      this.signInForm.reset();
+      this.router.navigateByUrl('/owner/ofaill')
+    }
   }
+
 }

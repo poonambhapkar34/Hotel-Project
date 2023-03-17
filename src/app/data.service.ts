@@ -12,6 +12,7 @@ export class DataService {
   userurl= 'http://localhost:3000/user';
   ownerurl= 'http://localhost:3000/owner';
   hotelurl= 'http://localhost:3000/hotelDetails';
+  getHotelListByOwnerURL= 'http://localhost:3000/OwnerHotelDetails';
   bookingUrl= 'http://localhost:3000/hotelbooking';
  
 
@@ -21,9 +22,8 @@ export class DataService {
   postData: any = [];
   postDataObj: any;
   newRegistration: boolean = false;
-
-
-
+  ownerName: any;
+  hotelListByOwner: any;
 
   constructor(public http: HttpClient) { }
 
@@ -80,8 +80,8 @@ export class DataService {
  getHotelDetailById(id:number){
   return this.http.get(this.hotelurl +'/' +id)
  }
-getHotelListByOwner(ownerName:string){
-  return  this.http.get(this.hotelurl +'/' + ownerName)
+getHotelListByOwner(){
+  return  this.http.get(this.getHotelListByOwnerURL)
 }
 
 // postApiCall(data:any){
