@@ -13,6 +13,7 @@ export class UsersigninComponent implements OnInit {
   signInForm!: FormGroup;
   resonseData: any;
   apidata: any;
+  userApiData :any;
 
 
   constructor(private dataservice : DataService,private fb : FormBuilder ,private http:HttpClient,private router :Router) { }
@@ -28,31 +29,25 @@ export class UsersigninComponent implements OnInit {
     });
   }
   
-  signInData(data:any){
-    console.log(data);
-    this.http.get<any>("http://localhost:3000/user").subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.userName===this.signInForm.value.userName && a.userPass===this.signInForm.value.userPass
-      })
-      if(user){
-        alert("Login successful");
-        this.signInForm.reset();
-        this.router.navigateByUrl('/userland')
-      }
-      else{
-        alert("user not found")
-        this.signInForm.reset();
-        // this.router.navigateByUrl('adminfaill')
-      }
+  submit() {
+   //get usr data from db
+    this.dataservice.getUserApiCall().subscribe(resp => {
+      this.userApiData = resp;
     })
-  }
-  
-  getUserData(){
-    this.dataservice.getUserCall().subscribe((data)=>{
-    this.apidata=data
-    console.log(data);
+    let validUser = this.userApiData.find((ele: any) => {
+      return this.signInForm.value.userName == ele.userName && this.signInForm.value.userPass == ele.userPass
     })
+
+    if (validUser) {
+      alert("Login successful");
+      this.signInForm.reset();
+      this.router.navigateByUrl('/user/usersucces')
+    }
+    else {
+      alert("user not found")
+      this.signInForm.reset();
+      this.router.navigateByUrl('/user/usersignin')
+    }
   }
-  
 
 }

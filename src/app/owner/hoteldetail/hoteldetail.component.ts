@@ -74,28 +74,21 @@ export class HoteldetailComponent implements OnInit {
 
   }
 
-  postHoteldata(data: any) {
-    // console.log(data);
-    //putApiCall
-    if (this.dataId) {
-      this.dataservice.putHotelCall(this.dataId, this.regitrationForm.value).subscribe((res) => {
+  submit() {
+     //post api call
+    if (this.newRegistration) {
+      this.dataservice.postHotelDetailsApiCall(this.regitrationForm.value).subscribe((res) => {
         console.log(res);
-
       })
     }
-    //post hotel data
     else {
-      // this.dataservice.postHotelCall(data).subscribe((res) => {
-      //   console.log(res);
-
-      // })
-      this.dataservice.postDataObj = data;
-      this.dataservice.postData.push(data);
-      console.log('serv data',this.dataservice.postData);
-      
+      //patch pi call
+      this.dataservice.patchHotelDetailsApiCall(this.regitrationForm.value).subscribe((res: any) => {
+        console.log(res);
+      })
     }
-     alert('data update succefully')
-      this.router.navigateByUrl('ownerland')
+    this.router.navigateByUrl('/owner/ownerland')
   }
+  
 
 }

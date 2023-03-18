@@ -33,7 +33,7 @@ export class OwnersigninComponent implements OnInit {
   }
 
   OwnerGetApiCall() {
-    this.dataservice.getOwnerCall().subscribe(respo => {
+    this.dataservice.getOwnerApiCall().subscribe(respo => {
       this.ownerData = respo;
       console.log(respo);
     });
@@ -41,7 +41,7 @@ export class OwnersigninComponent implements OnInit {
   }
 
   HotelDetailsGetApiCall() {
-    this.dataservice.getHotelCall().subscribe(respo => {
+    this.dataservice.getHotelDetailsApiCall().subscribe(respo => {
       this.hotelDetails = respo;
       console.log(respo);
     })
@@ -58,8 +58,8 @@ export class OwnersigninComponent implements OnInit {
     }
 
     if (this.ownerData) {
-      this.validOwner = this.ownerData.find((a: any) => {
-        return a.userName === this.signInForm.value.userName && a.userPass === this.signInForm.value.userPass
+      this.validOwner = this.ownerData.find((dbData: any) => {
+        return dbData.userName === this.signInForm.value.userName && dbData.userPass === this.signInForm.value.userPass
       })
       console.log('this.ownerSuccData ', this.ownerSuccData);
     }

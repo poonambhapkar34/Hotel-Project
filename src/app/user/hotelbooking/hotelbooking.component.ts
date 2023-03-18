@@ -27,13 +27,13 @@ export class HotelbookingComponent implements OnInit {
     });
   }
  
-  //postapi
-postHotelBookingdata(data:any){
-    console.log(data);
-    this.dataservice.postHotelBookingCall(data).subscribe((res)=>{ 
+
+  submit(){
+    //postapi
+    this.dataservice.postHotelBookingCall(this.signInForm.value).subscribe((res)=>{ 
   })
     confirm("You book your hotel succesfully");
-    this.router.navigateByUrl('/userland')
+    this.router.navigateByUrl('/user/userland')
 }
 
 }

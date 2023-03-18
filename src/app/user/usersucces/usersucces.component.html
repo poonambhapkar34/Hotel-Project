@@ -20,7 +20,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let data of apidata | search:searchText">
+      <tr *ngFor="let data of hotelDetails | search:searchText">
           <td>{{data.id}}</td>
           <td>{{data.userName}}</td>
           <td>{{data.hotelName}}</td>
@@ -28,7 +28,7 @@
           <td>{{data.roomAvailable}}</td>
           <td>{{data.hotelAddress}}</td>
           <td>{{data.hotelMobile }}</td>
-          <td><button type="button" class="btn btn-outline-success" routerLink="/hotelbooking">BOOK NOW</button>
+          <td><button type="button" class="btn btn-outline-success" routerLink="/user/hotelbooking">BOOK NOW</button>
           </td>
           
       </tr>

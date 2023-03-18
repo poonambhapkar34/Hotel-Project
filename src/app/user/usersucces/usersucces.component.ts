@@ -7,8 +7,7 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./usersucces.component.scss']
 })
 export class UsersuccesComponent implements OnInit {
-  apidata: any;
-  flag = false;
+  hotelDetails: any;
   searchText:any;
 
   constructor(private dataservice:DataService) { }
@@ -18,12 +17,9 @@ export class UsersuccesComponent implements OnInit {
 
   }
   getHotelDetails() {
-    this.dataservice.getHotelCall().subscribe((data) => {
-      this.apidata = data
-      console.log(data);
+    this.dataservice.getHotelDetailsApiCall().subscribe((data) => {
+      this.hotelDetails = data
     })
-
-    this.flag = true
   }
 
 

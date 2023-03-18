@@ -29,7 +29,7 @@ export class UsersignupComponent implements OnInit {
   postUserdata(data:any){
     console.log(data);
     //postapi
-    this.dataservice.postUserCall(data).subscribe((res)=>{
+    this.dataservice.postUserApiCall(data).subscribe((res)=>{
       console.log(res);   
   })
 }

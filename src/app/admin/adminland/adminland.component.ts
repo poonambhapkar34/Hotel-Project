@@ -29,20 +29,20 @@ export class AdminlandComponent implements OnInit {
       alert('no request available')
     }
   }
-  acceptRequest() {
-    //post hotel data
+  // acceptRequest() {
+  //   //post hotel data
 
-    // for (var i = 0; i < this.hotelData.length; ++i){
-    //     this.obj[i] = this.hotelData[i];
-    // }
-    this.dataservice.postHotelCall( this.hotelObjData ).subscribe((res) => {
-      console.log(res);
-    })
-    this.showReq= false;
-  }
-  rejectRequest() {
-    this.showReq= false;
+  //   // for (var i = 0; i < this.hotelData.length; ++i){
+  //   //     this.obj[i] = this.hotelData[i];
+  //   // }
+  //   this.dataservice.postHotelCall( this.hotelObjData ).subscribe((res) => {
+  //     console.log(res);
+  //   })
+  //   this.showReq= false;
+  // }
+  // rejectRequest() {
+  //   this.showReq= false;
 
 
-  }
+  // }
 }

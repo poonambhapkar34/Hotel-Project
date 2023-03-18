@@ -29,16 +29,17 @@ export class AdminsignupComponent implements OnInit {
     });
   }
 
-  postAdmindata(data:any){
-    console.log(data);
+  submit(){
+ 
+    console.log('form',this.signUpForm.value);
     
     //postapi
-    this.dataservice.postAdminCall(data).subscribe((res)=>{
+    this.dataservice.adminPostApiCall(this.signUpForm.value).subscribe((res)=>{
       console.log(res);
       
   })
   alert("you have suceesfully create account")
-  this.roter.navigateByUrl('/adminsucces')
+  this.roter.navigateByUrl('/admin/adminsucces')
 
 }
   

@@ -27,13 +27,10 @@ export class AdminsigninComponent implements OnInit {
     });
   }
 
-  async signInData() {
+  async submit() {
     console.log('signinForm data', this.signInForm.value);
-    // this.http.get<any>("http://localhost:3000/admin").subscribe(res=>{
-    //   const user = res.find((a:any)=>{
-    //     return a.userName===this.signInForm.value.userName && a.userPass===this.signInForm.value.userPass
-    //   })
-    this.adminData = await this.dataService.getAdminCall().toPromise();
+   //get api call of Admin
+    this.adminData = await this.dataService.getAdminDataApiCall().toPromise();
 
     var admin = this.adminData.find((ele: any) => {
       return ele.userName === this.signInForm.value.userName && ele.userPass === this.signInForm.value.userPass

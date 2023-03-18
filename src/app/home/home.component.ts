@@ -10,13 +10,14 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit {
   image='/assets/img/royal.jpg'
 
-  constructor( private dataservice:DataService,private router :Router ) { }
+  constructor( private dataservice:DataService,
+    private router :Router ) { }
 
   ngOnInit(): void {
   }
   Journey(data:any){
     console.log('...jy');
-    this.dataservice.userJourney=data
+    this.dataservice.userJourney = data;
     if(data=='Admin'){
       this.router.navigateByUrl('/admin/adminland')
     }

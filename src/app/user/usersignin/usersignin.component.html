@@ -17,7 +17,7 @@
       </mat-form-field><br><br>
 
         <button [disabled]="signInForm.invalid" class="btn" mat-raised-button color="accent"
-          (click)="signInData(signInForm.value)">Sign in</button>
+          (click)="submit()">Sign in</button>
           <div>Not a member?<a routerLink="/adminsignup" > Signup now  </a> </div>
     </form>
 </div>

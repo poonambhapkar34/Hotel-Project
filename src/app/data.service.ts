@@ -6,13 +6,13 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class DataService {
+
   // url='http://localhost:3000'
   userJourney:any
   adminurl= 'http://localhost:3000/admin';
   userurl= 'http://localhost:3000/user';
   ownerurl= 'http://localhost:3000/owner';
-  hotelurl= 'http://localhost:3000/hotelDetails';
-  getHotelListByOwnerURL= 'http://localhost:3000/OwnerHotelDetails';
+  hotelDetailsurl= 'http://localhost:3000/hotelDetails';
   bookingUrl= 'http://localhost:3000/hotelbooking';
  
 
@@ -24,27 +24,28 @@ export class DataService {
   newRegistration: boolean = false;
   ownerName: any;
   hotelListByOwner: any;
+  hotelDetailId: any;
 
   constructor(public http: HttpClient) { }
 
   //getAdminCall
-  getAdminCall(){
+  getAdminDataApiCall(){
     return this.http.get(this.adminurl);
   }
   //postAdmincall
-  postAdminCall(data:any){
+  adminPostApiCall(data:any){
     return this.http.post(this.adminurl, data)
   }
  //getUserCall
-  getUserCall(){
+  getUserApiCall(){
     return this.http.get(this.userurl)
   }
   //postUserCall
-  postUserCall(data:any){
+  postUserApiCall(data:any){
     return this.http.post(this.userurl, data)
   }
   //  getOwnerCall
-  getOwnerCall(){
+  getOwnerApiCall(){
     return this.http.get(this.ownerurl)
   }
   //postOwnercall
@@ -52,42 +53,30 @@ export class DataService {
     return this.http.post(this.ownerurl,data)
   }
   //getHotelCall
-  getHotelCall(){
-    return this.http.get(this.hotelurl)
+  getHotelDetailsApiCall(){
+    return this.http.get(this.hotelDetailsurl)
   }
-  //gwtHoteCallById
-  getHotelCallById(id:any){
-    return this.http.delete(this.hotelurl + "/" + id)
 
-  }
   //postHotelCall
-  postHotelCall(data:any){
-    return this.http.post(this.hotelurl,data)
+  postHotelDetailsApiCall(data:any){
+    return this.http.post(this.hotelDetailsurl,data)
   }
  //deletOwnerCall
-  deletHotelCall(id:any){
-    return this.http.delete(this.hotelurl + "/" + id)
+  deletHotelById(id:any){
+    return this.http.delete(this.hotelDetailsurl + "/" + id)
   }
-  //putOwnerCall
-  putHotelCall(id:any,body:any){
-    return this.http.put(this.hotelurl + "/" + id, body)
+  //patch hotel details
+  patchHotelDetailsApiCall(hotelDetails: any):any {
+   return this.http.patch(this.hotelDetailsurl + "/" + this.hotelDetailId , hotelDetails )
   }
+
  //postHotelBookingCall
  postHotelBookingCall(data:any){
   return this.http.post(this.bookingUrl ,data)
  }
 
  getHotelDetailById(id:number){
-  return this.http.get(this.hotelurl +'/' +id)
+  return this.http.get(this.hotelDetailsurl +'/' +id)
  }
-getHotelListByOwner(){
-  return  this.http.get(this.getHotelListByOwnerURL)
-}
 
-// postApiCall(data:any){
-//  return this.http.post(this.url,data)
-// }
-// getApiCall(){
-//   return this.http.get(this.url + "/" + this.userJourney)
-// }
 }

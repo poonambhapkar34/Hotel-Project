@@ -8,38 +8,29 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./adminsucces.component.scss']
 })
 export class AdminsuccesComponent implements OnInit {
-  apidata: any;
+  HotelDetails: any;
 
 
   constructor(private router : Router, private dataservice : DataService) { }
 
   ngOnInit(): void {
-   this.getHotelDetails()
-    
+   this.getHotelDetails();
   }
+
   getHotelDetails() {
-    this.dataservice.getHotelCall().subscribe((data) => {
-      this.apidata = data
+    this.dataservice.getHotelDetailsApiCall().subscribe((data) => {
+      this.HotelDetails = data
       console.log(data);
     })
-
   }
   newChange():void{
     this.router.navigateByUrl('adminsignin')
   }
  //deletApi
- deleteData(id: any) {
-  this.dataservice.deletHotelCall(id).subscribe((data) => {
-    this.apidata=data
-    console.log(data);
-  })
-
+ async deleteData(id: any) {
+  await this.dataservice.deletHotelById(id).toPromise()
   //to refresh hotel list
-  this.getHotelDetails()
-
+  this.getHotelDetails();
 }
-editData(){
 
-}
- 
 }
