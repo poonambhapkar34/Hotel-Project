@@ -1,6 +1,14 @@
-<h1>Hotel List</h1>
+<div class="main">
+    <button mat-button color="warn" routerLink="/owner/ownerland">Back</button>
+    <button class="bg" mat-raised-button color="primary"  (click)="newRegistration()">New Hotel Registration</button>
+    <button  class="btn btn-dark bg" (click)="viewHotelList()" >Hotel List</button>
+   
+
+
+<div *ngIf="showHotelDetails">
+    <h1>Hotel List</h1>
 <table border="2px black">
-    <thead *ngIf="flag">
+    <thead >
         <tr>
             <th>Id</th>
             <th>Owner Name</th>
@@ -28,4 +36,5 @@
     </tbody>
 </table>
 <br>
-<button mat-button color="warn" routerLink="/owner/ownerland">Back</button>
+</div>
+</div>

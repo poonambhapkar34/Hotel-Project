@@ -16,7 +16,7 @@ export class DataService {
   bookingUrl= 'http://localhost:3000/hotelbooking';
  
 
-  getApiData: any;
+  HotelByIdApiData: any;
   editId: any;
   dataId: any;
   postData: any = [];
@@ -25,6 +25,7 @@ export class DataService {
   ownerName: any;
   hotelListByOwner: any;
   hotelDetailId: any;
+  hotelJourney!: string;
 
   constructor(public http: HttpClient) { }
 

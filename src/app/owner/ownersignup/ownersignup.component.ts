@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { DataService } from 'src/app/data.service';
 export class OwnersignupComponent implements OnInit {
   signUpForm!:FormGroup;
 
-  constructor(private fb:FormBuilder, private dataservice : DataService) { }
+  constructor(private fb:FormBuilder, private dataservice : DataService,
+    private router : Router) { }
 
   ngOnInit(): void {
     this.formValidation()
@@ -32,9 +34,9 @@ export class OwnersignupComponent implements OnInit {
     //post hotel data
     this.dataservice.postOwnerCall(data).subscribe((res)=>{
       console.log(res);
-
   })
-
+  this.signUpForm.reset();
+  this.router.navigateByUrl('/owner/osucces')
 
 }
 

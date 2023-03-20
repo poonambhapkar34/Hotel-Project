@@ -15,6 +15,7 @@ export class OsuccesComponent implements OnInit {
   ownerHotelData:any=[];
   hotelListByOwner: any;
   refreshedHotelList : any =[]
+  showHotelDetails: boolean = false;
   constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -44,10 +45,24 @@ export class OsuccesComponent implements OnInit {
 
   async editData(id: any) {
     this.dataservice.hotelDetailId = id
-    this.dataservice.newRegistration = false;
-    this.dataservice.getApiData = await this.dataservice.getHotelDetailById(id).toPromise()
+    // this.dataservice.newRegistration = false;
+    //this.dataservice.hotelJourney = 'Edit';
+    this.dataservice.HotelByIdApiData = await this.dataservice.getHotelDetailById(id).toPromise()
 
     this.router.navigateByUrl('/owner/hoteldetail')
 
   } 
+  newRegistration()
+  {
+      //  this.dataservice.newRegistration = true;
+    this.dataservice.hotelJourney = 'New Registration';
+    this.router.navigateByUrl('/owner/hoteldetail');
+  }
+  viewHotelList(){
+    this.showHotelDetails = true;
+  }
+
+  ngOnDistroy(){
+    this.dataservice.hotelJourney = '';
+  }
 }

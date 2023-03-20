@@ -14,6 +14,7 @@ export class HoteldetailComponent implements OnInit {
   editData: any;
   editIdArray:any=[];
   newRegistration: any;
+  hotelJourney!: string;
 
 
   constructor(private fb: FormBuilder, private dataservice: DataService,private router:Router) { }
@@ -21,19 +22,21 @@ export class HoteldetailComponent implements OnInit {
   ngOnInit(): void {
     console.log('hotel details');
     
-   // this.dataId = this.dataservice.dataId;
-    this.newRegistration = this.dataservice.newRegistration;
-    //this.editData = this.dataservice.getApiData;
+
+    //this.newRegistration = this.dataservice.newRegistration;
+    this.hotelJourney = this.dataservice.hotelJourney;
     console.log('data...', this.editData);
-    if(this.newRegistration){
-      this.editData = {} ;
-    }
-    else{
-      this.editData = this.dataservice.getApiData;
-    }
-    //this.dataId ? this.fetchIdData(): this.formData();
-    // this.fetchIdData()
-  
+    // if(this.newRegistration){
+    //   this.editData = {} ;
+    // }
+    // else{
+    //   this.editData = this.dataservice.HotelByIdApiData;
+    // }
+    if (this.hotelJourney == 'New Registration') {
+      this.editData = {};
+    } else {
+      this.editData = this.dataservice.HotelByIdApiData;
+    } 
 
   //}
   // fetchIdData() {
@@ -76,7 +79,8 @@ export class HoteldetailComponent implements OnInit {
 
   submit() {
      //post api call
-    if (this.newRegistration) {
+   // if (this.newRegistration) {
+    if(this.hotelJourney == 'New Registration'){
       this.dataservice.postHotelDetailsApiCall(this.regitrationForm.value).subscribe((res) => {
         console.log(res);
       })
@@ -87,7 +91,7 @@ export class HoteldetailComponent implements OnInit {
         console.log(res);
       })
     }
-    this.router.navigateByUrl('/owner/ownerland')
+    this.router.navigateByUrl('/owner/osucces')
   }
   
 

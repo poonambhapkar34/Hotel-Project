@@ -17,11 +17,6 @@ export class OwnerlandComponent implements OnInit {
       
     // })
   }
-  newRegistration()
-  {
-        this.dataservice.newRegistration = true;
-    this.router.navigateByUrl('/owner/hoteldetail');
-
-  }
+  
 
 }
